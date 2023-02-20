@@ -9,7 +9,7 @@ while True:
     except ValueError:
         bad_answer = True
         print("Invalid answer try again")
-    if bad_answer is False:
+    if bad_answer is not True:
         bid = 0
         current_price = 0
         while bid != -1:
@@ -17,7 +17,7 @@ while True:
             if bid > current_price:
                 print("Bid success")
                 current_price = bid
-            elif bid > current_price:
+            elif bid < current_price:
                 print("Your bid was lower than the current price")
         if reserve < current_price:
             print(f"{ah_item} sold successfully at {current_price:.2f}$")
